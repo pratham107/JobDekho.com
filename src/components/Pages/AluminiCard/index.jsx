@@ -41,98 +41,29 @@ const studentData = [
     jobRole: "Web Developer-II",
     companyAt: 'Myntra'
   },
-  {
-    id: "7",
-    name: "Prankur Wankhade",
-    jobRole: "SDE-II",
-    companyAt: 'Amazon'
-  },
-  {
-    id: "8",
-    name: "Vinay Mishra",
-    jobRole: "SDE-I",
-    companyAt: 'Atlassian'
-  },
-  {
-    id: "9",
-    name: "Prathmesh Bhopale",
-    jobRole: "SDE-II",
-    companyAt: 'Tower Research'
-  },
-  {
-    id: "10",
-    name: "Ashwin Balode",
-    jobRole: "Front-End Engineer-I",
-    companyAt: 'Amazon'
-  },
-  {
-    id: "5",
-    name: "Ashish Bardia",
-    jobRole: "SDE-II",
-    companyAt: 'Flipkart'
-  },
-  {
-    id: "6",
-    name: "Aniket Chouhan",
-    jobRole: "Web Developer-II",
-    companyAt: 'Myntra'
-  },
-  {
-    id: "1",
-    name: "Prankur Wankhade",
-    jobRole: "SDE-II",
-    companyAt: 'Amazon'
-  },
-  {
-    id: "2",
-    name: "Vinay Mishra",
-    jobRole: "SDE-I",
-    companyAt: 'Atlassian'
-  },
-  {
-    id: "3",
-    name: "Prathmesh Bhopale",
-    jobRole: "SDE-II",
-    companyAt: 'Tower Research'
-  },
-  {
-    id: "4",
-    name: "Ashwin Balode",
-    jobRole: "Front-End Engineer-I",
-    companyAt: 'Amazon'
-  },
-  {
-    id: "5",
-    name: "Ashish Bardia",
-    jobRole: "SDE-II",
-    companyAt: 'Flipkart'
-  },
-  {
-    id: "6",
-    name: "Aniket Chouhan",
-    jobRole: "Web Developer-II",
-    companyAt: 'Myntra'
-  },
 ];
 
 const AluminiCrousal = () => {
   return (
     <div className="w-full px-4 py-6 bg-black">
       <Swiper
-        spaceBetween={40}
-        slidesPerView={4}
+        spaceBetween={20}
         loop={true}
-        speed={4000}
+        speed={3000}
+        grabCursor={true}
+        autoplay={{ delay: 0, disableOnInteraction: false }}
         freeMode={true}
-        autoplay={{ delay: 1000, disableOnInteraction: false }}
+        slidesPerView={1.2}
         breakpoints={{
-          640: { slidesPerView: 3 },
+          480: { slidesPerView: 1.5 },
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
           1024: { slidesPerView: 4 },
         }}
         modules={[Autoplay, FreeMode]}
       >
-        {studentData.map((student) => (
-          <SwiperSlide key={student.id}>
+        {studentData.concat(studentData).map((student, index) => (
+          <SwiperSlide key={`${student.id}-${index}`}>
             <AluminiCard
               studentName={student.name}
               postName={student.jobRole}
