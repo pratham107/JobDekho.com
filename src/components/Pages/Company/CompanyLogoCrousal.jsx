@@ -76,6 +76,7 @@ const companyLogos = [
           autoplay={{
             delay: 0, // no pause between transitions
             disableOnInteraction: false,
+            reverseDirection: true
           }}
           breakpoints={{
             320: { slidesPerView: 2 },

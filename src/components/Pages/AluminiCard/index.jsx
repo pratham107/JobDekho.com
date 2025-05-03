@@ -119,13 +119,13 @@ const AluminiCrousal = () => {
   return (
     <div className="w-full px-4 py-6 bg-black">
       <Swiper
-        spaceBetween={50}
-        slidesPerView={4}
+        spaceBetween={350}
+        slidesPerView={5}
         loop={true}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         breakpoints={{
-          640: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
+          640: { slidesPerView: 1 },
+          1024: { slidesPerView: 5 },
         }}
         modules={[Autoplay]}
       >

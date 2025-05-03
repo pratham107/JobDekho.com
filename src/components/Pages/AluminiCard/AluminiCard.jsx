@@ -7,6 +7,7 @@ import {
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
+import { Badge } from '@/components/ui/badge'
 
 const AluminiCard = ({studentName, postName, Companyname}) => {
   return (
@@ -26,7 +27,8 @@ const AluminiCard = ({studentName, postName, Companyname}) => {
       </CardContent>
       <CardFooter className="flex flex-col justify-center items-center gap-1 py-1">
           <CardTitle className="text-lg font-semibold text-white">{studentName || 'NA'}</CardTitle>
-          <p className="text-sm text-white">{postName || 'NA'} @ {Companyname || 'NA'}</p>
+          <Badge>{postName || 'NA'} @ {Companyname || 'NA'}</Badge>
+          {/* <p className="text-sm text-white">{postName || 'NA'} @ {Companyname || 'NA'}</p> */}
           <p className="text-sm text-white text-center leading-relaxed">
             Thanks to <span className="font-medium  text-orange-500">jobdekho.com</span>, I gained the right mentorship and resources that helped me crack my dream role at Amazon. The platform's structured guidance was a game-changer in my preparation journey.
           </p>

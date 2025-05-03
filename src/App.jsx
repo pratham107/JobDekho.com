@@ -6,6 +6,7 @@ import HeadingText from './components/Pages/Aluminy/HeadingText'
 import CompanyCard from './components/Pages/Company/CompanyCard'
 import CompanyLogoCrousal from './components/Pages/Company/CompanyLogoCrousal'
 import AluminiCard from './components/Pages/AluminiCard';
+import Footer from './components/Pages/Footer/Footer'
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
       <div className=''>
           <Navbar/>
         <div className="hero m-4 flex justify-center">
-           <Hero/>         
+           <Hero/>        
         </div>
         <div className="m-6 flex justify-center">
             <HeadingText />
@@ -24,10 +25,13 @@ function App() {
         <div className="companyCrousal m-2">
           <CompanyLogoCrousal />
         </div> 
+        
+        
         <div className="aluminiCard">
            <AluminiCard />
         </div>
       </div>
+      <Footer/>
      </div>
      
     </>
