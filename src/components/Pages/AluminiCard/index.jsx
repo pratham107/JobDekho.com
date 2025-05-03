@@ -47,20 +47,34 @@ const AluminiCrousal = () => {
   return (
     <div className="w-full px-4 py-6 bg-black">
       <Swiper
-        spaceBetween={20}
         loop={true}
         speed={3000}
         grabCursor={true}
         autoplay={{ delay: 0, disableOnInteraction: false }}
         freeMode={true}
-        slidesPerView={1.2}
-        breakpoints={{
-          480: { slidesPerView: 1.5 },
-          640: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
-          1024: { slidesPerView: 4 },
-        }}
         modules={[Autoplay, FreeMode]}
+        breakpoints={{
+          320: {
+            slidesPerView: 1.1,
+            spaceBetween: 16, // gap on small screens
+          },
+          480: {
+            slidesPerView: 1.5,
+            spaceBetween: 16,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 24,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 28,
+          },
+        }}
       >
         {studentData.concat(studentData).map((student, index) => (
           <SwiperSlide key={`${student.id}-${index}`}>
