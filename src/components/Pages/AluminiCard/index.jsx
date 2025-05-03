@@ -2,7 +2,7 @@ import React from 'react';
 import AluminiCard from './AluminiCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, FreeMode } from 'swiper/modules';
 
 const studentData = [
   {
@@ -122,12 +122,14 @@ const AluminiCrousal = () => {
         spaceBetween={350}
         slidesPerView={5}
         loop={true}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        speed={4000}
+        freeMode={true}
+        autoplay={{ delay: 1000, disableOnInteraction: false }}
         breakpoints={{
-          640: { slidesPerView: 1 },
+          640: { slidesPerView: 3 },
           1024: { slidesPerView: 5 },
         }}
-        modules={[Autoplay]}
+        modules={[Autoplay, FreeMode]}
       >
         {studentData.map((student) => (
           <SwiperSlide key={student.id}>
