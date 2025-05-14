@@ -56,7 +56,7 @@ const AluminiCrousal = () => {
         breakpoints={{
           320: {
             slidesPerView: 1.1,
-            spaceBetween: 20, // gap on small screens
+            spaceBetween: 24, // gap on small screens
           },
           480: {
             slidesPerView: 1.5,
