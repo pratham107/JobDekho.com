@@ -1,6 +1,7 @@
 import { animate, stagger } from "motion";
 import { splitText } from "motion-plus";
 import React, { useEffect, useRef, useState } from "react";
+import avatarImage from "../../../assets/avatar.png";
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -32,14 +33,24 @@ export default function Hero() {
 
   return (
     <div className="container" ref={containerRef}>
-      <h1
-        className="animated-title"
-        contentEditable
-        suppressContentEditableWarning
-        onBlur={(e) => setEditableText(e.currentTarget.textContent || "")}
-      >
-        {editableText}
-      </h1>
+      <div className="flex flex-col lg:flex-row justify-center items-center w-full gap-6">
+        <h1
+          className="animated-title"
+          contentEditable
+          suppressContentEditableWarning
+          onBlur={(e) => setEditableText(e.currentTarget.textContent || "")}
+        >
+          {editableText}
+        </h1>
+        <div className="hidden lg:block">
+          <img
+            src={avatarImage}
+            alt="Avatar"
+            className="w-90 h-90 object-contain"
+          />
+        </div>
+      </div>
+
       <style>{`
         .container {
           width: 100%;
