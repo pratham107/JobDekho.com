@@ -1,41 +1,53 @@
-import './App.css'
-import { Button } from './components/ui/button'
-import Navbar from './components/Pages/Navbar/Navbar'
-import Hero from './components/Pages/Hero/Hero'
-import HeadingText from './components/Pages/Aluminy/HeadingText'
-import CompanyCard from './components/Pages/Company/CompanyCard'
-import CompanyLogoCrousal from './components/Pages/Company/CompanyLogoCrousal'
-import AluminiCard from './components/Pages/AluminiCard';
-import Footer from './components/Pages/Footer/Footer'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+
+import Navbar from './components/Pages/Navbar/Navbar';
+import Footer from './components/Pages/Footer/Footer';
+
+import Home from './Home';
+import Login from './components/Pages/Auth/Login';
+import Register from './components/Pages/Auth/Register';
+import ExploreOpportunity from './components/Jobs/Pages';
+import ResumeAnalyzer from './components/ResumeAnalyzer';
 
 function App() {
-
   return (
-    <>
-     <div className="bg-neutral-950 h-screen w-screen">
-      <div className=''>
-          <Navbar/>
-        <div className="hero m-4 flex justify-center">
-           <Hero/>        
-        </div>
-        <div className="m-6 flex justify-center">
-            <HeadingText />
-        </div>
-        {/* <CompanyCard/> */}
-        <div className="companyCrousal m-2">
-          <CompanyLogoCrousal />
-        </div> 
+    <Router>
+      <div className="bg-neutral-950 min-h-screen w-full text-white">
         
+
+        <Routes>
+          <Route 
+            path="/" 
+            element={
+              <>
+              <Navbar />
+                <Home />
+              <Footer />
+              </>
+              
+            } 
+            />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route 
+          path="/opportunities" 
+          element={
+            <>
+              <Navbar />
+              <ExploreOpportunity />
+              <Footer />
+            </>
+            
+          } 
+            />
+          {/* <Route path="/resume-analyzer" element={<ResumeAnalyzer />} /> */}
+        </Routes>
+
         
-        <div className="aluminiCard">
-           <AluminiCard />
-        </div>
       </div>
-      <Footer/>
-     </div>
-     
-    </>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;
